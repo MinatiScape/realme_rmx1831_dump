@@ -1,0 +1,9 @@
+in.mohalla.sharechat
+in.amazon.mShop.android.shopping
+net.one97.paytm
+com.eterno
+com.UCMobile.intl
+com.qidian.Int.reader
+com.til.timesnews
+com.realmecomm.app
+com.realmestore.app

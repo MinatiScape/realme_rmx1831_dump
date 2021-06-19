@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<filter-conf>
+  <version>20190517</version>
+  <isOpen>true</isOpen>
+  <filter-name>Multimedia_Daemon_List</filter-name>
+    <dirac>
+        <name>com.oppo.music</name>
+        <attribute>music</attribute>
+
+        <name>com.oppo.video</name>
+        <attribute>video</attribute>
+    </dirac>
+
+    <volume>
+        <name>com.tencent.tvoem</name>
+        <attribute>forbid</attribute>
+
+        <name>com.cdbabyjoy.ecepark</name>
+        <attribute>streammute</attribute>
+
+        <name>com.hifimusic.player</name>
+        <attribute>streammute</attribute>
+
+        <name>air.tv.douyu.android</name>
+        <attribute>no_need_mute_in_call</attribute>
+
+        <name>com.tencent.qqlive</name>
+        <attribute>no_need_mute_in_call</attribute>
+
+        <name>null</name>
+        <attribute>no_need_mute_in_ringing</attribute>
+
+        <name>com.smile.gifmaker</name>
+        <attribute>kill</attribute>
+
+        <name>com.coloros.findmyphone</name>
+        <attribute>permit</attribute>
+
+        <name>android.media.cts</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.systemui</name>
+        <attribute>permit</attribute>
+
+        <name>com.ting.mp3.android</name>
+        <attribute>permit</attribute>
+
+        <name>com.youku.phone</name>
+        <attribute>permit</attribute>
+
+        <name>com.oppo.autotest.autotoolplatform</name>
+        <attribute>permit</attribute>
+
+        <name>com.coloros.speechassist</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.cts.deviceandprofileowner</name>
+        <attribute>permit</attribute>
+
+        <name>com.iflytek.inputmethod</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.bluetooth</name>
+        <attribute>permit</attribute>
+
+        <name>com.goldese.controlcenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.huoshe.zzz.nearme.gamecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.martian.fzsj.nearme.gamecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.martian.gjggs.nearme.gamecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.martian.mnhx.nearme.gamecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.wb.cjhsz.nearme.gamecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.coloros.support.services</name>
+        <attribute>permit</attribute>
+
+        <name>com.huami.watch.hmwatchmanager</name>
+        <attribute>permit</attribute>
+    </volume>
+
+    <control>
+        <name>MultimediaService</name>
+        <attribute>true</attribute>
+
+        <name>setMode</name>
+        <attribute>true</attribute>
+
+        <name>recordConflict</name>
+        <attribute>false</attribute>
+
+        <name>streamAdjust</name>
+        <attribute>true</attribute>
+
+        <name>setspeakerphoneOn</name>
+        <attribute>true</attribute>
+
+        <name>killMediaserver</name>
+        <attribute>true</attribute>
+
+        <name>streamMute</name>
+        <attribute>true</attribute>
+
+        <name>killApp</name>
+        <attribute>true</attribute>
+
+        <name>releaseAudiotrack</name>
+        <attribute>true</attribute>
+
+        <name>setBluetoothScoOn</name>
+        <attribute>true</attribute>
+
+        <name>setMicrophoneMute</name>
+        <attribute>false</attribute>
+
+        <name>smartvolumeRing</name>
+        <attribute>true</attribute>
+
+        <name>setStreamVolume</name>
+        <attribute>true</attribute>
+
+        <name>trackRelease</name>
+        <attribute>false</attribute>
+
+        <name>checkSuspendException</name>
+        <attribute>true</attribute>
+
+        <name>multiThreadDecodeHeif</name>
+        <attribute>true</attribute>
+
+        <name>setRingerMode</name>
+        <attribute>true</attribute>
+
+        <name>startBluetoothSco</name>
+        <attribute>true</attribute>
+    </control>
+
+    <call-method-invalid>
+        <name>com.android.systemui</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.bluetooth</name>
+        <attribute>permit</attribute>
+
+        <name>com.coloros.safecenter</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.systemui</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.settings</name>
+        <attribute>permit</attribute>
+
+        <name>android.process.contacts</name>
+        <attribute>permit</attribute>
+
+        <name>system_server</name>
+        <attribute>permit</attribute>
+
+        <name>android.media.cts</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.cts.deviceandprofileowner</name>
+        <attribute>permit</attribute>
+
+        <name>com.android.server.telecom</name>
+        <attribute>permit</attribute>
+
+        <name>com.coloros.support.services</name>
+        <attribute>permit</attribute>
+
+        <name>com.xiaomi.hm.health</name>
+        <attribute>permit</attribute>
+
+        <name>com.huami.watch.hmwatchmanager</name>
+        <attribute>permit</attribute>
+
+        <name>com.xiaomi.hm.health</name>
+        <attribute>permit</attribute>
+
+        <name>com.coloros.speechassist</name>
+        <attribute>permit</attribute>
+    </call-method-invalid>
+
+    <google-default-logic>
+        <name>android.media.cts</name>
+        <attribute>null</attribute>
+
+        <name>com.android.cts.deviceandprofileowner</name>
+        <attribute>null</attribute>
+    </google-default-logic>
+
+    <heif-multithread>
+        <name>com.coloros.gallery3d</name>
+        <attribute>null</attribute>
+    </heif-multithread>
+
+    <zenmode>
+        <name>com.tencent.mobileqq</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.mm</name>
+        <attribute>wechat_mute</attribute>
+
+        <name>com.zing.zalo</name>
+        <attribute>null</attribute>
+    </zenmode>
+
+    <wechat-encode>
+        <name>com.tencent.mm:tools</name>
+        <attribute>
+        OMX.MTK.VIDEO.ENCODER.AVC
+
+        OMX.google.h264.encoder
+        </attribute>
+    </wechat-encode>
+
+    <codec-size>
+        <name>com.facebook.orca</name>
+        <attribute>true</attribute>
+    </codec-size>
+
+    <record-conflict>
+        <name>com.tencent.mobileqq</name>
+        <attribute>5000</attribute>
+
+        <name>com.google.android.googlequicksearchbox</name>
+        <attribute>record-no-hint</attribute>
+
+        <name>me.pou.app</name>
+        <attribute>record-no-hint</attribute>
+
+        <name>com.campmobile.snowcamera</name>
+        <attribute>record-no-hint</attribute>
+    </record-conflict>
+
+    <sco-on-delay>
+        <name>com.tencent.mm</name>
+        <attribute>50</attribute>
+    </sco-on-delay>
+
+    <at-sampleRate>
+        <name>com.tencent.mobileqq</name>
+        <attribute>16000</attribute>
+    </at-sampleRate>
+
+    <disable-remoteplayer>
+        <name>com.bsb.hike</name>
+        <attribute>false</attribute>
+    </disable-remoteplayer>
+
+    <game-bt-noise>
+        <name>com.tencent.feiji</name>
+        <attribute>null</attribute>
+
+        <name>com.netease.my</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.mhxy.sqsy</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.pvz2</name>
+        <attribute>null</attribute>
+
+        <name>com.popcap.pvz2</name>
+        <attribute>null</attribute>
+    </game-bt-noise>
+
+    <game-forbid-voice>
+        <name>com.tencent.tmgp.sgame</name>
+        <attribute>null</attribute>
+    </game-forbid-voice>
+
+    <record-delay>
+        <name>com.eg.android.AlipayGphone</name>
+        <attribute>null</attribute>
+    </record-delay>
+
+     <audiotrack-release>
+        <name>com.coloros.safecenter</name>
+        <attribute>null</attribute>
+
+        <name>com.android.systemui</name>
+        <attribute>null</attribute>
+
+        <name>com.android.settings</name>
+        <attribute>null</attribute>
+
+        <name>com.coloros.screenshot</name>
+        <attribute>null</attribute>
+
+        <name>android.process.contacts</name>
+        <attribute>null</attribute>
+
+        <name>system_server</name>
+        <attribute>null</attribute>
+    </audiotrack-release>
+
+    <audiotrack-no-fast>
+        <name>com.haochang.chunk</name>
+        <attribute>0</attribute>
+
+        <name>com.youku.phone</name>
+        <attribute>0</attribute>
+
+        <name>com.tudou.android</name>
+        <attribute>0</attribute>
+
+        <name>com.soundcloud.android</name>
+        <attribute>0</attribute>
+
+        <name>com.tencent.tmgp.cf</name>
+        <attribute>16000</attribute>
+
+        <name>com.tencent.tmgp.pubgm</name>
+        <attribute>16000</attribute>
+
+        <name>com.netease.dwrg.nearme.gamecenter</name>
+        <attribute>16000</attribute>
+
+        <name>com.tencent.tmgp.dwrg</name>
+        <attribute>16000</attribute>
+
+        <name>com.netease.hyxd.nearme.gamecenter</name>
+        <attribute>0</attribute>
+
+        <name>com.netease.hyxd</name>
+        <attribute>0</attribute>
+
+        <name>com.netease.chiji</name>
+        <attribute>0</attribute>
+
+        <name>com.netease.ko</name>
+        <attribute>0</attribute>
+
+        <name>com.tencent.ig</name>
+        <attribute>0</attribute>
+
+        <name>com.dts.freefireth</name>
+        <attribute>0</attribute>
+
+        <name>com.elex.lastbattlegroundsurvival</name>
+        <attribute>0</attribute>
+
+        <name>com.glu.deerhunt2</name>
+        <attribute>0</attribute>
+
+        <name>com.gameloft.android.ANMP.GloftM5HM</name>
+        <attribute>0</attribute>
+
+        <name>com.gameloft.android.ANMP.GloftNOHM</name>
+        <attribute>0</attribute>
+
+        <name>com.mobile.legends</name>
+        <attribute>0</attribute>
+    </audiotrack-no-fast>
+
+    <game-dirac-noise>
+        <name>com.tencent.tmgp.cf</name>
+        <attribute>16000</attribute>
+
+        <name>com.dts.freefireth</name>
+        <attribute>16000</attribute>
+    </game-dirac-noise>
+
+    <encode-scaling>
+        <name>pola.cam.video.android:ui</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.mobileqq:video</name>
+        <attribute>null</attribute>
+
+        <name>com.instagram.android</name>
+        <attribute>null</attribute>
+
+        <name>my.beautyCamera</name>
+        <attribute>null</attribute>
+
+        <name>com.coloros.video</name>
+        <attribute>null</attribute>
+
+        <name>com.bsb.hike</name>
+        <attribute>null</attribute>
+
+        <name>jp.naver.line.android</name>
+        <attribute>null</attribute>
+
+        <name>cn.soulapp.android</name>
+        <attribute>null</attribute>
+
+        <name>com.facebook.katana</name>
+        <attribute>null</attribute>
+
+        <name>com.duapps.recorder</name>
+        <attribute>null</attribute>
+
+        <name>com.ymt360.app.mass</name>
+        <attribute>null</attribute>
+    </encode-scaling>
+
+    <customscene-record>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+    </customscene-record>
+
+    <disable-ffmpeg>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+    </disable-ffmpeg>
+
+    <setvoipmode-incall>
+        <name>com.whatsapp</name>
+        <attribute>null</attribute>
+
+        <name>com.google.android.apps.tachyon</name>
+        <attribute>null</attribute>
+
+        <name>com.zing.zalo</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.sgame</name>
+        <attribute>null</attribute>
+    </setvoipmode-incall>
+
+    <oppo-getstreamvolume>
+        <name>com.ting.mp3.android</name>
+        <attribute>null</attribute>
+    </oppo-getstreamvolume>
+
+    <change-streamtype>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+    </change-streamtype>
+
+    <display-notify>
+        <name>com.tencent.mobileqq</name>
+        <attribute>mode</attribute>
+
+        <name>com.tencent.mm</name>
+        <attribute>mode</attribute>
+
+        <name>cn.lcsw.lcpay</name>
+        <attribute>mode</attribute>
+
+        <name>com.soufun</name>
+        <attribute>mode</attribute>
+    </display-notify>
+
+    <oppo-getStreamMaxVolume>
+        <name>com.meTextBook024.touch</name>
+        <attribute>15</attribute>
+
+        <name>com.meTextBook302.touch</name>
+        <attribute>15</attribute>
+
+        <name>com.meTextBook261.touch</name>
+        <attribute>15</attribute>
+
+        <name>com.meTextBook176.touch</name>
+        <attribute>15</attribute>
+    </oppo-getStreamMaxVolume>
+
+    <blocking-mic-detecting>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+    </blocking-mic-detecting>
+
+    <change-framecount-voice>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+    </change-framecount-voice>
+
+    <not-addplayerbase>
+        <name>com.mahjong.sichuang</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjonghn</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjongguangxi</name>
+        <attribute>null</attribute>
+
+        <name>com.ixianlai.shanmahjong</name>
+        <attribute>null</attribute>
+
+        <name>com.ixianlai.nxmahjong</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjonghnpdk</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjongguiyang</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjonggd</name>
+        <attribute>null</attribute>
+
+        <name>com.tianfu.majiang</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.yunnanmahjong</name>
+        <attribute>null</attribute>
+
+        <name>com.nearme.gamecenter.ddz.nearme.gamecenter</name>
+        <attribute>null</attribute>
+
+        <name>com.qileyx.ddz.yyb</name>
+        <attribute>null</attribute>
+
+        <name>com.boyaa.lordland.nearme.gamecenter</name>
+        <attribute>null</attribute>
+
+        <name>com.boyaa.kwxmj</name>
+        <attribute>null</attribute>
+
+        <name>com.boyaa.kwxmj.nearme.gamecenter</name>
+        <attribute>null</attribute>
+
+        <name>com.pfu.popstar</name>
+        <attribute>null</attribute>
+
+        <name>com.xianlai.mahjonghainan</name>
+        <attribute>null</attribute>
+
+        <name>com.hlbyr.nearme.gamecenter</name>
+        <attribute>null</attribute>
+
+        <name>com.zy.org.zyqp.by.nearme.gamecenter</name>
+        <attribute>null</attribute>
+    </not-addplayerbase>
+
+    <disable-colorspace>
+        <name>com.tencent.mm</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.androidqqmail</name>
+        <attribute>null</attribute>
+
+        <name>com.qq.qcloud</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.WBlog</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.mobileqq:picture</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.wework</name>
+        <attribute>null</attribute>
+
+        <name>com.mt.mtxx.mtxx</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.mobileqq:imageservice</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.mobileqq:peak</name>
+        <attribute>null</attribute>
+
+        <name>com.coloros.gallery3d</name>
+        <attribute>null</attribute>
+    </disable-colorspace>
+
+    <limit-getstreamvolume>
+        <name>com.tencent.mobileqq</name>
+        <attribute>null</attribute>
+    </limit-getstreamvolume>
+
+    <game-bt-delay>
+        <name>com.tencent.tmgp.speedmobile</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.sgame</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.pubgmhd</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.ig</name>
+        <attribute>null</attribute>
+    </game-bt-delay>
+
+    <concurrent-capture>
+        <name>com.coloros.speechassist</name>
+        <attribute>null</attribute>
+    </concurrent-capture>
+
+    <tencentsgame-record>
+        <name>com.tencent.tmgp.sgame</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.pubgmhd</name>
+        <attribute>null</attribute>
+    </tencentsgame-record>
+
+    <game-voice-optimize>
+        <name>com.tencent.tmgp.sgame</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.tmgp.apollo</name>
+        <attribute>null</attribute>
+
+        <name>com.tencent.apollovoice.apollovoice_demo</name>
+        <attribute>null</attribute>
+    </game-voice-optimize>
+
+    <png16bit-convert>
+        <name>com.coloros.gallery3d</name>
+        <attribute>null</attribute>
+    </png16bit-convert>
+
+    <getOppoAtlasService>
+        <name>OnlyForTest</name>
+        <attribute>forbid</attribute>
+    </getOppoAtlasService>
+
+    <audioserver-out-memory>
+        <name>system_server</name>
+        <attribute>null</attribute>
+    </audioserver-out-memory>
+
+    <car-a2dp-remotesubmix>
+        <name>Ford Ecosport</name>
+        <attribute>null</attribute>
+    </car-a2dp-remotesubmix>
+
+    <dirac-music-ring>
+        <name>com.android.settings</name>
+        <attribute>100000</attribute>
+    </dirac-music-ring>
+
+    <audiorecord-inactive-read>
+        <name>com.instagram.android</name>
+        <attribute>null</attribute>
+    </audiorecord-inactive-read>
+
+    <record-parameters>
+        <name>com.whatsapp</name>
+        <attribute>null</attribute>
+    </record-parameters>
+
+    <avc-default-proflie>
+        <name>com.hpplay.happycast</name>
+        <attribute>0x01</attribute>
+    </avc-default-proflie>
+
+    <audiotrack-volume-limit>
+        <name>com.sankuai.meituan.dispatch.crowdsource</name>
+        <attribute>9</attribute>
+    </audiotrack-volume-limit>
+
+    <muxer-format>
+        <name>org.codeaurora.snapcam</name>
+        <attribute>3gpp</attribute>
+    </muxer-format>
+</filter-conf>

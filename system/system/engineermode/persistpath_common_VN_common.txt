@@ -1,0 +1,7 @@
+data/app/com.lazada.android
+data/app/com.UCMobile.intl
+data/app/com.kwai.video
+data/app/com.xb.topnews
+data/app/com.zing.zalo
+data/app/com.zing.mp3
+data/app/com.epi

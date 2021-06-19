@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<config version="20190126">
+    {"projectname":"EmbryoConfig","content":[
+    {"name":"embryo_support_blacklist","value":["false"]},
+    {"name":"embryo_whitelist","value":[
+    "com.tencent.mm",
+    "com.tencent.mobileqq",
+    "com.tencent.qqlive",
+    "com.ss.android.ugc.aweme",
+    "com.qiyi.video",
+    "com.taobao.taobao",
+    "com.sina.weibo"]},
+    {"name":"embryo_blacklist","value":["com.google.android.setupwizard"]},
+    {"name":"embryo_enable","value":["false"]},
+    {"name":"embryo_inflate","value":["true"]},
+    {"name":"embryo_support_optheme","value":["true"]},
+    {"name":"embryo_rename","value":["false"]},
+    {"name":"embryo_limit_count","value":["32"]}
+    ]}
+</config>

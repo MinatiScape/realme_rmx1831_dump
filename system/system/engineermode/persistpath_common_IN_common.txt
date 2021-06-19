@@ -1,0 +1,9 @@
+data/app/in.mohalla.sharechat
+data/app/in.amazon.mShop.android.shopping
+data/app/net.one97.paytm
+data/app/com.eterno
+data/app/com.UCMobile.intl
+data/app/com.qidian.Int.reader
+data/app/com.til.timesnews
+data/app/com.realmecomm.app
+data/app/com.realmestore.app

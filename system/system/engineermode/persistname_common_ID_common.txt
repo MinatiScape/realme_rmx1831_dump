@@ -1,0 +1,9 @@
+com.zhangyue.read
+com.lazada.android
+com.UCMobile.intl
+com.kwai.mercury
+id.co.babe
+com.jakarta.baca
+com.msd.JTClient
+com.qidian.Int.reader
+com.realmecomm.app

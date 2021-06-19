@@ -1,0 +1,2 @@
+data/app/com.lazada.android
+data/app/com.qidian.Int.reader

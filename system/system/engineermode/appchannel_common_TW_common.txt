@@ -1,0 +1,2 @@
+iReader_preinstall.txt
+qdtraditional_preinstall.txt

@@ -1,0 +1,7 @@
+com.lazada.android
+com.UCMobile.intl
+com.kwai.video
+com.xb.topnews
+com.zing.zalo
+com.zing.mp3
+com.epi

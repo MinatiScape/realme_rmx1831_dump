@@ -1,0 +1,2 @@
+com.zhangyue.read
+com.qidian.QDReader.traditional

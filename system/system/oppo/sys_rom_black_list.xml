@@ -1,0 +1,62 @@
+﻿<filter-conf>
+<version>20180201</version>
+<isOpen>1</isOpen>
+<filter-name>sys_rom_black_list</filter-name>
+<!--Warning: The format must be fixed -->
+<type value='forbid'>
+<startForbidden minCode='0' maxCode='max'>com.qihoo.permmgr</startForbidden>
+<startForbidden minCode='0' maxCode='max'>com.kingroot.kinguser</startForbidden>
+<startForbidden minCode='0' maxCode='max'>com.zhiqupk.root</startForbidden>
+<startForbidden minCode='0' maxCode='max'>com.baidu.easyroot</startForbidden>
+<startForbidden minCode='0' maxCode='max'>com.shuame.rootgenius</startForbidden>
+<startForbidden minCode='0' maxCode='max'>com.baidu.superroot</startForbidden>
+</type>
+<forbid>
+<zh-CN>此应用存在高危风险，已禁止其运行#此应用会获取手机最高权限，可能会恶意控制手机#好</zh-CN>
+<zh-TW>此應用存在高危風險，已禁止其運行#此應用會獲取手機最高權限，可能會惡意控制手機#好</zh-TW>
+<en-US>This app is at high risk, has been banned its operation # This app will get the highest authority on the phone, may be malicious control phone#ok</en-US>
+</forbid>
+
+<dialogType enable='true' normalType='0' crashType='0'/> <!--0 toast, 1 dialog, 2 notification -->
+<remoteServer date='-7' switch='1'/>
+<dialogCheckTime>1000</dialogCheckTime>
+
+<crash type='nullRef' key='com.unicom.shield.UnicomApplicationWrapper.onCreate'>NullPointerException</crash>
+<crash type='nullRef' key='com.qihoo.util.StubApp'>UnsatisfiedLinkError</crash>
+<crash type='nullRef' key='/lib/arm/libshella'>tombstone_</crash>
+
+<permission category='permissionPrivacycategory' type='readCall' dialogType='1' key='android.permission.READ_CALL_LOG' bt='3'>SecurityException</permission>
+<permission category='permissionPrivacycategory' type='readCall' dialogType='1' key='android.permission.WRITE_CALL_LOG' bt='3'>SecurityException</permission>
+<permission category='permissionPrivacycategory' type='readSms' dialogType='1' key='android.permission.READ_SMS' bt='3'>SecurityException</permission>
+<permission category='permissionNormalcategory' type='phoneState' dialogType='1' key='android.permission.READ_PHONE_STATE' bt='2'>SecurityException</permission>
+
+<notificationSubText key='zh-CN'>兼容性问题</notificationSubText>
+<notificationSubText key='zh-TW'>相容性問題</notificationSubText>
+<notificationSubText key='en-US'>Compatibility problem</notificationSubText>
+
+
+<nullRef key='zh-CN'>系统提示您#*的加固插件版本太低，不支持Android 8.1 新系统#取消#好</nullRef>
+<nullRef key='zh-TW'>系統提示您#*的加固挿件版本太低，不支持Android 8.1新系統#取消#好</nullRef>
+<nullRef key='en-US'>The system prompts#The version of the *'s reinforcement plug-in is too low to support the Android 8.1 system#Cancle#OK</nullRef>
+
+<permissionNormalcategory  key='zh-CN'>系统提示您*获取*权限失败而运行异常##退出#授予权限</permissionNormalcategory>
+<permissionNormalcategory  key='zh-TW'>系統提示您*獲取*許可權失敗而運行异常##退出#授予許可權</permissionNormalcategory>
+<permissionNormalcategory  key='en-US'>The system prompts you that * has failed to get * permissions and run exceptions##Exit#Allow</permissionNormalcategory>
+
+<permissionPrivacycategory  key='zh-CN'>*获取*权限失败而运行异常，是否开启权限并打开个人信息保护#开启信息保护后将同步开启应用相关权限，但应用只能读取到空信息#开启信息保护#开启权限</permissionPrivacycategory>
+<permissionPrivacycategory  key='zh-TW'>*獲取*許可權失敗而運行异常，是否開啟許可權並打開個人資訊保護#開啟資訊保護後將同步開啟應用相關許可權，但應用只能讀取到空資訊#開啟資訊保護#開啟許可權</permissionPrivacycategory>
+<permissionPrivacycategory  key='en-US'>* get * permission failure and abnormal operation, whether to open permissions and open the personal information protection#Opening information protection#Allow permissions</permissionPrivacycategory>
+
+<phoneState category='permissionNormalcategory' key='zh-CN'>"手机识别码"</phoneState>
+<phoneState category='permissionNormalcategory' key='zh-TW'>"手機識別碼"</phoneState>
+<phoneState category='permissionNormalcategory' key='en-US'>"Read Phone State"</phoneState>
+
+<readCall category='permissionPrivacycategory' key='zh-CN'>"拨打电话"</readCall>
+<readCall category='permissionPrivacycategory' key='zh-TW'>"撥打電話"</readCall>
+<readCall category='permissionPrivacycategory' key='en-US'>"Call phone"</readCall>
+
+<readSms category='permissionPrivacycategory' key='zh-CN'>"读取短信"</readSms>
+<readSms category='permissionPrivacycategory' key='zh-TW'>"讀取簡訊"</readSms>
+<readSms category='permissionPrivacycategory' key='en-US'>"Read SMS"</readSms>
+
+</filter-conf>

@@ -1,0 +1,398 @@
+##################################################################################
+### Copyright 2014 OPPO Mobile Comm Corp., Ltd.
+### All rights reserved.
+###
+### Description     : Provide a function to critical service
+### History          :( ID, Date, Author, Description)
+### Author: Canjie.Zheng
+### TAG: PSW.Android.OppoDebug.JunkLog
+##################################################################################
+
+#Runsheng.Pei@PSW.AD.Storage.ReservePartition.1207580, 2017/12/29, Add for new reserve partition
+#Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
+import /vendor/etc/init/hw/init.oppo.reserve.rc
+
+#ifdef VENDOR_EDIT
+#Yanzhen.Feng 2015/12/09, Add for SurfaceFlinger Layer dump
+service layerdump /system/bin/autochmod.sh "layerdump"
+    class core
+    user root
+    disabled
+    seclabel u:r:nativedump:s0
+    oneshot
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Yanzhen.Feng 2017/03/20, Add for systrace on phone
+service cont_systrace /system/bin/autochmod.sh "cont_systrace"
+    class core
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Canjie.Zheng, 2016/08/04, Add for junk log.
+service junklogcat /system/bin/autochmod.sh "junklogcat"
+    class main
+    user root
+    disabled
+    group system sdcard_rw sdcard_r
+    seclabel u:r:junklog:s0
+    oneshot
+
+service junkdmesg /system/bin/autochmod.sh "junkdmesg"
+    class main
+    user root
+    disabled
+    group system sdcard_rw sdcard_r
+    seclabel u:r:junklog:s0
+    oneshot
+
+service junkststart /system/bin/autochmod.sh "junkststart"
+    class main
+    user root
+    disabled
+    group system sdcard_rw sdcard_r
+    seclabel u:r:junklog:s0
+    oneshot
+
+service junkststop /system/bin/autochmod.sh "junkststop"
+    class main
+    user root
+    disabled
+    group system sdcard_rw sdcard_r
+    seclabel u:r:junklog:s0
+    oneshot
+
+service junklog /system/bin/junklogcollector
+    class main
+    user system
+    group system sdcard_rw sdcard_r
+    seclabel u:r:junklog:s0
+
+
+service junklogmonitor /system/bin/autochmod.sh "junklogmonitor"
+    class main
+    user system
+    group system sdcard_rw sdcard_r
+    disabled
+    seclabel u:r:junklog:s0
+    oneshot
+
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Nanwei.Deng 2017/07/25, Add for bspCriticalLog
+service bspCriticalLog /system/bin/bspCriticalLog
+    user system
+    group system
+    class main
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Xianfeng.Fu@PSW.MM.Daemon.Atlas.1332843,2018/10/12,add for atlas
+service atlasservice /system/bin/atlasservice
+    class core
+    user system
+    group graphics drmrpc readproc
+#endif
+
+#Jianping.Zheng2017/05/08, Add for systemserver futex_wait block check
+service checkfutexwait /system/bin/autochmod.sh "checkfutexwait"
+    class main
+    user root
+    group root
+    disabled
+    seclabel u:r:check_futexwait:s0
+#end, add for systemserver futex_wait block check
+
+#Jianping.Zheng 2017/04/04, Add for record performance
+service perf_record /system/bin/autochmod.sh "perf_record"
+    class main
+    user root
+    group root
+    disabled
+    seclabel u:r:perf_record:s0
+
+#Linjie.Xu@PSW.AD.Power.PowerMonitor.1104067, 2018/01/17, Add for OppoPowerMonitor get dmesg at O
+service opmgetdmesg /system/bin/autochmod.sh "kernelcacheforopm"
+    class main
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+
+#ifdef VENDOR_EDIT
+#Canjie.Zheng,2016/07/25,Add for junklog
+#start or stop base on the property
+on post-fs-data
+    mkdir /data/oppo_log 777
+    mkdir /data/ramdump 770 system system
+
+on property:persist.sys.oppo.junklog=true
+    start junklog
+
+on property:persist.sys.oppo.junklog=false
+    start junklog
+#endif VENDOR_EDIT
+
+#ifdef VENDOR_EDIT
+#Haoran.Zhang2016/09/22, Add for protect xkit
+#on init
+#   export XKIT /system/xbin/busybox
+#endif
+
+#ifdef VENDOR_EDIT
+#Deliang.Peng 2017/7/7,add for native watchdog
+service nativedump /system/bin/autochmod.sh "nativedump"
+    class core
+    user root
+    disabled
+    seclabel u:r:nativedump:s0
+    oneshot
+#endif /*VENDOR_EDIT*/
+
+#Canjie.Zheng2017/06/30, add for clan junk log.
+on property:sys.oppo.junkclean=1
+    start cleanjunk
+
+service cleanjunk system/bin/sh /autochmod.sh "cleanjunk"
+    class core
+    user root
+    disabled
+    seclabel u:r:junklog:s0
+    oneshot
+
+
+service powerlog system/bin/sh /autochmod.sh "powerlog"
+    class core
+    user root
+    disabled
+    seclabel u:r:junklog:s0
+    oneshot
+
+#Boning.Li@PSW.AD.OppoDebug.LogKit.1080426, 2016/08/06, Add screen record for oppo log.
+service screen_record /system/bin/autochmod.sh "screen_record"
+    class core
+    user root
+    disabled
+    oneshot
+
+#Add for TP Debug Log begin
+service gettpinfo /system/bin/autochmod.sh "gettpinfo"
+    class main
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+
+service inittpdebug /system/bin/autochmod.sh "inittpdebug"
+    class main
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+
+service settplevel /system/bin/autochmod.sh "settplevel"
+    class main
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+
+service backupscr /system/bin/autochmod.sh "screen_record_backup"
+    class core
+    user root
+    disabled
+    oneshot
+
+service pwkdumpon /system/bin/autochmod.sh "pwkdumpon"
+    class core
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+
+service pwkdumpoff /system/bin/autochmod.sh "pwkdumpoff"
+    class core
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+
+on property:persist.sys.assert.panic=*
+    start inittpdebug
+
+on property:persist.sys.oppodebug.tplevel=*
+    start settplevel
+#Add for TP Debug Log end
+
+#Jianping.Zheng 2017/05/08, Add for systemserver futex_wait block check
+on property:persist.sys.oppo.checkfutexwait=true
+    start checkfutexwait
+
+on property:persist.sys.oppo.checkfutexwait=false
+    stop checkfutexwait
+#end, add for systemserver futex_wait block check
+
+#Jianping.Zheng 2017/04/04, Add for record performance
+on property:persist.sys.oppo.perfrecord=true
+    start perf_record
+
+on property:persist.sys.oppo.perfrecord=false
+    stop perf_record
+#end add for record performance
+on property:persist.sys.assert.panic=false
+    start powerlog
+    setprop persist.log.size.main ""
+
+on property:persist.sys.assert.panic=true
+    setprop persist.log.size.main 2M
+
+#ifdef VENDOR_EDIT
+#Haoran.Zhang 2017/09/13, Add for [read new prop for feature StandaloneUserdata]
+on post-fs-data
+   start datarefresh
+
+service datarefresh /system/bin/autochmod.sh "userdatarefresh"
+    class core
+    user root
+    disabled
+    oneshot
+    seclabel u:r:rutilsdaemon:s0
+
+#Canjie.Zhang@PSW.AD.OppoDebug.LogKit.1080426, 2017/11/09, Add for logkit2.0 clean log command
+service cleanlog /system/bin/autochmod.sh "cleanlog"
+    class core
+    user root
+    disabled
+    seclabel u:r:junklog:s0
+    oneshot
+#endif
+
+
+on property:persist.sys.mtk.pwkdump=1
+    start pwkdumpon
+
+on property:persist.sys.mtk.pwkdump=0
+    start pwkdumpoff
+
+
+#ifdef VENDOR_EDIT
+#Li.Liu@PSW.AD.Stability.Crash.1296298, 2018/03/14, Add for trying to recover from sysetm hang
+on property:sys.oppo.boot_completed=0
+   start recover_hang
+
+service recover_hang /system/bin/sh /system/bin/autochmod.sh "recover_hang"
+    class core
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+#endif
+
+#ifdef VENDOR_EDIT
+#Xiaomin.Yang@PSW.CN.BT.Basic.Customize.1586031,2018/12/02, Add for updating wcn firmware by sau_res
+service wcnfirmwareupdate /system/bin/autochmod.sh "wcnfirmwareupdate"
+    class core
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+
+service wcnfirmwareupdatedump /system/bin/autochmod.sh "wcnfirmwareupdatedump"
+    class core
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+#endif /* VENDOR_EDIT */
+
+#ifdef COLOROS_EDIT
+#ChenYong@Plf.Framework, 2018/11/30, Add for Kernel Hotfix
+on post-fs-data
+    mkdir /data/oppo/oae 0701  root root
+    mkdir /data/oppo/oae/s 0700  root root
+    mkdir /data/oppo/oae/c 0707  root root
+    mkdir /data/oppo/oae/d 0707  root root
+    restorecon_recursive /data/oppo/oae
+
+service oae /system/bin/oae_server -s
+    seclabel u:r:oae_server:s0
+    class late_start
+    user root
+    group root log
+#endif /* COLOROS_EDIT*/
+
+#Laixin@PSW.CN.WiFi.Basic.Switch.1069763, 2018/09/03, Add for collect wifi switch log
+service collectWifiSwitchLog /system/bin/autochmod.sh "collectWifiSwitchLog"
+    class main
+    user root
+    disabled
+    oneshot
+
+service packWifiSwitchLog /system/bin/autochmod.sh "packWifiSwitchLog"
+    class main
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+
+on property:sys.oppo.wifi.switch.log.stop=1
+    start packWifiSwitchLog
+
+service mvWifiSwitchLog /system/bin/autochmod.sh "mvWifiSwitchLog"
+    class core
+    user root
+    disabled
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+#endif /*VENDOR_EDIT*/
+
+#ifdef VENDOR_EDIT
+#Xuefeng.Peng@PSW.AD.Performance.Storage.1721598, 2018/12/26, Add for abnormal sd card shutdown long time
+on property:persist.sys.fsck_shutdown=true
+   start fsck_shutdown
+
+service fsck_shutdown /system/bin/autochmod.sh "fsck_shutdown"
+    class core
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+#endif/*VENDOR_EDIT*/
+
+#ifdef VENDOR_EDIT
+#Bin.Li@BSP.Fingerprint.Secure 2018/12/27, Add for oae get bootmode
+service oae_boot_mode /system/bin/autochmod.sh "oae_bootmode"
+    class main
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    oneshot
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Yugang.Bao@PSW.AD.OppoDebug.LogKit.1491016, 2019/01/12, Add for copy oppousage
+on property:persist.sys.cpoppousage=1
+    start cpoppousage
+
+service cpoppousage /system/bin/autochmod.sh "cpoppousage"
+    class main
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+#endif/*VENDOR_EDIT*/
+
+#ifdef COLOROS_EDIT
+#ChenYong@Plf.Framework, 2019/01/15, Add for record to file of receiving kevent action
+on post-fs-data
+    mkdir /data/oppo/kevent 0775 system system
+
+service oppo_kevents /system/bin/oppo_kevent
+    class late_start
+    user system
+    group root system
+# endif /* COLOROS_EDIT */

@@ -1,0 +1,2 @@
+data/app/com.zhangyue.read
+data/app/com.qidian.QDReader.traditional

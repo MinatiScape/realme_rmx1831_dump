@@ -1,0 +1,2 @@
+com.coloros.safesdkproxy
+com.coloros.avastofferwall
