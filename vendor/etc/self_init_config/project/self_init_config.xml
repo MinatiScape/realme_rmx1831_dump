@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<self_init_config>
+
+<fingerprint_time   project="18611,18612" regionmark="-RU"   value= "1592472771" />
+<base_os_time       project="18611,18612" regionmark="-RU"   value= "1590758503" />
+<ro_product_model   project="18611,18612" regionmark="-RU"   value= "RMX1831" />
+<ro_product_name    project="18611,18612" regionmark="-RU"   value= "RMX1831" />
+<ro_product_device  project="18611,18612" regionmark="-RU"   value= "RMX1831" />
+<ro_build_id        project="18611,18612" regionmark="-RU"   value= "" />
+
+<fingerprint_time   project="18611,18612" regionmark="RU"   value= "1592472771" />
+<base_os_time       project="18611,18612" regionmark="RU"   value= "1590758503" />
+<ro_product_model   project="18611,18612" regionmark="RU"   value= "RMX1831" />
+<ro_product_name    project="18611,18612" regionmark="RU"   value= "RMX1831RU" />
+<ro_product_device  project="18611,18612" regionmark="RU"   value= "RMX1831" />
+<ro_build_id        project="18611,18612" regionmark="RU"   value= "" />
+
+<fingerprint_time   project="18615" regionmark="-RU"   value= "1592472771" />
+<base_os_time       project="18615" regionmark="-RU"   value= "1590758503" />
+<ro_product_model   project="18615" regionmark="-RU"   value= "RMX1833" />
+<ro_product_name    project="18615" regionmark="-RU"   value= "RMX1833" />
+<ro_product_device  project="18615" regionmark="-RU"   value= "RMX1833" />
+<ro_build_id        project="18615" regionmark="-RU"   value= "" />
+
+</self_init_config>
